@@ -422,7 +422,7 @@ function fetchExpenseClaim() {
 				var rowss = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
 		
 		        	j('<td></td>').attr({ class: ["expDate"].join(' ') }).text(newDateFormat).appendTo(rowss);	
-		        	j('<td></td>').attr({ class: ["expName"].join(' ') }).text('G'+row.expName+' / '+row.accHeadName).appendTo(rowss);	
+		        	j('<td></td>').attr({ class: ["expName"].join(' ') }).text(row.expName+' / '+row.accHeadName).appendTo(rowss);	
 				if(window.localStorage.getItem("MobileMapRole") == 'true')
 				{
 					if(row.expFromLoc != '' && row.expToLoc != '')
