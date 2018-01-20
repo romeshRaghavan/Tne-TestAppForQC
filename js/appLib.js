@@ -422,7 +422,7 @@ function fetchExpenseClaim() {
 				var rowss = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
 		
 		        	j('<td></td>').attr({ class: ["expDate"].join(' ') }).text(newDateFormat).appendTo(rowss);	
-		        	j('<td></td>').attr({ class: ["expName"].join(' ') }).text(row.expName+' / '+row.accHeadName).appendTo(rowss);	
+                  	        j('<td></td>').attr({ class: ["expName"].join(' ') }).text(row.expName+' / '+row.accHeadName).appendTo(rowss);	
 				if(window.localStorage.getItem("MobileMapRole") == 'true')
 				{
 					if(row.expFromLoc != '' && row.expToLoc != '')
@@ -436,7 +436,12 @@ function fetchExpenseClaim() {
 				}
 				else
 				{
-					j('<td></td>').attr({ class: ["expNarration"].join(' ') }).html('<p>'+row.expNarration+'</br>'+row.expFromLoc+"/"+row.expToLoc+ '</P>').appendTo(rowss);
+					if(row.expFromLoc != '' && row.expToLoc != '')
+					{
+						j('<td></td>').attr({ class: ["expNarration"].join(' ') }).html('<p>'+row.expNarration+'</br>'+row.expFromLoc+"/"+row.expToLoc+ '</P>').appendTo(rowss);	
+					}else{
+						j('<td></td>').attr({ class: ["expNarration"].join(' ') }).html('<p>'+row.expNarration+'</br>'+row.expFromLoc+""+row.expToLoc+ '</P>').appendTo(rowss);
+					}		
 				}
 				
 				if(row.busExpAttachment.length == 0){
@@ -1226,8 +1231,9 @@ function saveWalletAttachment(status){
 	j('#loading_Cat').show();
 	if (mydb) {
 		//get the values of the text inputs
-      
-		var file = document.getElementById('imageWallet').files[0];
+		
+	  //var file = document.getElementById('imageWallet').files[0];
+        var file = document.getElementById("imageWallet").src;
 		
 	if (file != "") {
             mydb.transaction(function (t) {
@@ -1758,7 +1764,12 @@ function fetchEmployeeAdvance() {
 				}
 				else
 				{
-					j('<td></td>').attr({ class: ["expNarration"].join(' ') }).html('<p>'+row.expNarration+'</br>'+row.expFromLoc+"/"+row.expToLoc+ '</P>').appendTo(rowss);
+					if(row.expFromLoc != '' && row.expToLoc != '')
+					{
+						j('<td></td>').attr({ class: ["expNarration"].join(' ') }).html('<p>'+row.expNarration+'</br>'+row.expFromLoc+"/"+row.expToLoc+ '</P>').appendTo(rowss);
+					}else{
+						j('<td></td>').attr({ class: ["expNarration"].join(' ') }).html('<p>'+row.expNarration+'</br>'+row.expFromLoc+""+row.expToLoc+ '</P>').appendTo(rowss);
+					}
 				}
 				
 				if(row.busExpAttachment.length == 0){

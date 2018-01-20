@@ -105,8 +105,8 @@ function commanLogin(){
  	var domainName = userNameValue.split('@')[1];
 	var jsonToDomainNameSend = new Object();
 	jsonToDomainNameSend["userName"] = domainName;
-	//jsonToDomainNameSend["mobilePlatform"] = device.platform;
-	jsonToDomainNameSend["mobilePlatform"] = "Android";
+	jsonToDomainNameSend["mobilePlatform"] = device.platform;
+	//jsonToDomainNameSend["mobilePlatform"] = "Android";
   	//var res=JSON.stringify(jsonToDomainNameSend);
 	var requestPath = WebServicePath;
 	j.ajax({
@@ -1943,7 +1943,8 @@ function resetImageData(){
       if(voucherType == 'wallet'){
 		smallImageWallet.style.display = 'block';
 
-        document.getElementById('imageWallet').files[0] = "data:image/jpeg;base64," + imageURI;
+          //document.getElementById('imageWallet').files[0] = "data:image/jpeg;base64," + imageData;
+        document.getElementById('imageWallet').setAttribute('src', "data:image/jpeg;base64," + imageData);
 		
 		smallImageWallet.src = "data:image/jpeg;base64," + imageURI;
 		

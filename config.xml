@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.Expenzing" version="1.4.4" android-versionCode="93" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.Expenzing" version="1.4.6" android-versionCode="95" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 <!--widget id="com.expenzing.expenzing" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"-->
     <name>ExpenzingTestAppQC</name>
     <description>
@@ -23,17 +23,19 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="android-maxSdkVersion" value="26" />
+    <preference name="android-maxSdkVersion" value="27" />
     <preference name="android-installLocation" value="auto" />
     <preference name='phonegap-version' value='cli-7.0.1' />
     <feature name="http://api.phonegap.com/1.0/device" />
+	
     <!-- <feature name="http://api.phonegap.com/1.0/camera"/> -->
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     
     <gap:plugin name="cordova-plugin-battery-status" source="npm" />
-    <gap:plugin name="cordova-plugin-camera" source="npm" />
+	<gap:plugin name="cordova-plugin-compat" source="npm" spec="~1.2.0"/>
+    <gap:plugin name="cordova-plugin-camera" source="npm" spec="~2.3.0"/>
     <!--<gap:plugin name="org.apache.cordova.core.camera" />
      <plugin name="org.apache.cordova.camera" spec="0.2.3" source="pgb" /> -->
     <!--<gap:plugin name="cordova-plugin-media-capture" source="npm" /> -->
@@ -48,8 +50,8 @@
     <gap:plugin name="cordova-plugin-device-motion" source="npm" />
     <gap:plugin name="cordova-plugin-device-orientation" source="npm" />
     <gap:plugin name="cordova-plugin-dialogs" source="npm" />
-    <gap:plugin name="cordova-plugin-file" source="npm" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm" />
+    <gap:plugin name="cordova-plugin-file" source="npm" spec="~4.1.1"/>
+    <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.5.0"/>
     <gap:plugin name="cordova-plugin-geolocation" source="npm" />
     <gap:plugin name="cordova-plugin-globalization" source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
@@ -108,4 +110,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+  <platform name="winphone" />
 </widget>
