@@ -3,7 +3,7 @@ var defaultPagePath='app/pages/';
 var headerMsg = "Expenzing";
 var urlPath;
 //var WebServicePath = 'http://1.255.255.36:9898/NexstepWebService/mobileLinkResolver.service';
-var WebServicePath = 'http://1.255.255.169:8080/NexstepWebService/mobileLinkResolver.service';
+var WebServicePath = 'http://1.255.255.180:8080/NexstepWebService/mobileLinkResolver.service';
 //var WebServicePath = 'http://live.nexstepapps.com:8284/NexstepWebService/mobileLinkResolver.service';
 var clickedFlagCar = false;
 var clickedFlagTicket = false;
